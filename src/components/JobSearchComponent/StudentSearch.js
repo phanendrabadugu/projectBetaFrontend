@@ -57,7 +57,7 @@ const StudentSearch = () => {
   const fetchNearbyAddresses = async (lat, lng, distance) => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/jobSearch/studentSearch",
+        "https://projectbetabackend-3e1757b1ed9d.herokuapp.com/api/jobSearch/studentSearch",
         {
           params: { lat, lng, distance },
         }

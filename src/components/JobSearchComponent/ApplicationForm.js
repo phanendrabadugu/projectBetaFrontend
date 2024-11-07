@@ -51,7 +51,7 @@ const ApplicationForm = ({ isOpen, onClose, selectedRestaurant, jobPosts }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/submitJobApplication",
+        "https://projectbetabackend-3e1757b1ed9d.herokuapp.com/api/submitJobApplication",
         {
           ...formData,
           selectedRestaurantId: selectedRestaurant._id,

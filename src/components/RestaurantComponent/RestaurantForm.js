@@ -48,7 +48,7 @@ const RestaurantForm = () => {
       setLocation(location);
 
       // POST request to backend to save the coordinates and job posts
-      await axios.post('http://localhost:5000/api/restaurants/restaurantForm', {
+      await axios.post('https://projectbetabackend-3e1757b1ed9d.herokuapp.com/api/restaurants/restaurantForm', {
         lat: location.lat,
         lng: location.lng,
         jobPosts: jobPosts,
