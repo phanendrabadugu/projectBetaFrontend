@@ -1,11 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 
+
+const apiUrl = process.env.REACT_APP_API_URL;
+const googleApiKey = process.env.GOOGLE_API_KEY
+
 const geocodeAddress = async (address) => {
   const response = await axios.get(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
       address
-    )}&key=AIzaSyAIyY4C-OPivpAncytCELY-fUCk9aJsDWc`
+    )}&key=${googleApiKey}`
   );
   const location = response.data.results[0].geometry.location;
   return location;
@@ -48,7 +52,7 @@ const RestaurantForm = () => {
       setLocation(location);
 
       // POST request to backend to save the coordinates and job posts
-      await axios.post('https://projectbetabackend-3e1757b1ed9d.herokuapp.com/api/restaurants/restaurantForm', {
+      await axios.post(`${apiUrl}/api/restaurants/restaurantForm`, {
         lat: location.lat,
         lng: location.lng,
         jobPosts: jobPosts,

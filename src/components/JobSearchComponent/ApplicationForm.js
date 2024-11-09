@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import Select from "react-select";
 
 Modal.setAppElement("#root");
-
+const apiUrl = process.env.REACT_APP_API_URL;
 const ApplicationForm = ({ isOpen, onClose, selectedRestaurant, jobPosts }) => {
   const initialFormData = {
     name: "",
@@ -51,7 +51,7 @@ const ApplicationForm = ({ isOpen, onClose, selectedRestaurant, jobPosts }) => {
 
     try {
       const response = await axios.post(
-        "https://projectbetabackend-3e1757b1ed9d.herokuapp.com/api/submitJobApplication",
+        `${apiUrl}/api/jobSearch/submitJobApplication`,
         {
           ...formData,
           selectedRestaurantId: selectedRestaurant._id,
@@ -83,6 +83,7 @@ const ApplicationForm = ({ isOpen, onClose, selectedRestaurant, jobPosts }) => {
     });
   }
 
+  console.log('apiurl',apiUrl)
   return (
     <Modal
       isOpen={isOpen}
@@ -96,7 +97,7 @@ const ApplicationForm = ({ isOpen, onClose, selectedRestaurant, jobPosts }) => {
         </button>
       </div>
       <div style={styles.formContainer}>
-        <h2>Application Form for {selectedRestaurant.address.city}</h2>
+        {/* <h2>Application Form for {selectedRestaurant.address.city}</h2> */}
         <form onSubmit={handleSubmit} style={{ maxWidth: '500px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
   {/** Name Input */}
   <div style={{ marginBottom: '15px', position: 'relative' }}>

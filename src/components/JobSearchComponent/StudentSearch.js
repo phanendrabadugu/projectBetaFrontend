@@ -4,6 +4,10 @@ import axios from "axios";
 import SearchForm from "../JobSearchComponent/SearchForm";
 import RestaurantList from "../RestaurantComponent/RestaurantList";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
+
+console.log(apiUrl)
 const geocodeAddress = async (address) => {
   const response = await axios.get(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
@@ -57,7 +61,7 @@ const StudentSearch = () => {
   const fetchNearbyAddresses = async (lat, lng, distance) => {
     try {
       const response = await axios.get(
-        "https://projectbetabackend-3e1757b1ed9d.herokuapp.com/api/jobSearch/studentSearch",
+        `${apiUrl}/api/jobSearch/studentSearch`,
         {
           params: { lat, lng, distance },
         }

@@ -17,7 +17,7 @@ const RestaurantList = ({ addresses }) => {
     setIsFormOpen(false);
     setSelectedRestaurant(null);
   };
-
+console.log('slec',selectedRestaurant)
   return (
     <div style={{
       height: '800px',
@@ -50,13 +50,13 @@ const RestaurantList = ({ addresses }) => {
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f0f0f0'}
             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#fff'}
           >
-            <h2 style={{
+            {/* <h2 style={{
               marginBottom: '5px',
               fontSize: '20px',
               color: '#333',
             }}>
               {address.address.city}
-            </h2>
+            </h2> */}
             <div style={{
               marginLeft: '10px',
               color: '#555',
