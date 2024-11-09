@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 const apiUrl = process.env.REACT_APP_API_URL;
-const googleApiKey = process.env.GOOGLE_API_KEY
+const googleApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
 
 const geocodeAddress = async (address) => {
   const response = await axios.get(
