@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://phanendrabadugu.github.io/projectBetaFrontend/",
   "dependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@react-google-maps/api": "^2.19.3",
@@ -11,6 +12,7 @@
     "axios": "^1.7.2",
     "browserify-zlib": "^0.2.0",
     "crypto-browserify": "^3.12.1",
+    "gh-pages": "^6.2.0",
     "https-browserify": "^1.0.0",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
@@ -36,7 +38,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
